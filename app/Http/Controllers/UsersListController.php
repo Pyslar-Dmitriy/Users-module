@@ -18,4 +18,9 @@ class UsersListController extends Controller
             'users' => $users,
         ]);
     }
+
+    public function delete(int $id)
+    {
+        User::destroy($id);
+    }
 }

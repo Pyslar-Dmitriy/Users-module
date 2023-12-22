@@ -17,7 +17,7 @@ export default function UsersListPage({ auth, users }) {
 
     const renderUsers = () => {
         return users.map(user => {
-            return <SingleUserRow key={user.id} name={user.name}/>
+            return <SingleUserRow key={user.id} id={user.id} name={user.name} email={user.email}/>
         })
     }
 
