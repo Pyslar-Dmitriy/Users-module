@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UsersListController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,9 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('admin')->group(function () {
-    Route::get('/users-list', function () {
-        return Inertia::render('UsersList');
-    })->name('users-list');
+    Route::get('/users-list', [UsersListController::class, 'show'])->name('users-list.show');
 });
 
 require __DIR__.'/auth.php';
