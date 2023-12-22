@@ -56,6 +56,8 @@ export default function Authenticated({ user, header, children }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link href={route('profile.edit')}>Profile</Dropdown.Link>
+                                        { user.role_id === 2 &&
+                                            <Dropdown.Link href={route('users-list')}>Users list</Dropdown.Link> }
                                         <Dropdown.Link href={route('logout')} method="post" as="button">
                                             Log Out
                                         </Dropdown.Link>
